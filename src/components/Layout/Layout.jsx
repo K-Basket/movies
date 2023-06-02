@@ -1,11 +1,12 @@
-const { Outlet } = require('react-router-dom');
+const { Outlet, NavLink } = require('react-router-dom');
 
 const layout = () => {
   return (
     <>
       <header>
         <nav>
-          <p>Navigation</p>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/library">My library</NavLink>
         </nav>
       </header>
 
