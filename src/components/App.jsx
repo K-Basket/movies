@@ -12,11 +12,16 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="library" element={<Library />} />
-          <Route path="library/:id" element={<LibraryDetails />}>
+          <Route path="home/:id" element={<LibraryDetails />}>
             <Route path="about" element={<AboutMovie />} />
             <Route path="cast" element={<Cast />} />
           </Route>
+
+          <Route path="library" element={<Library />} />
+          {/* <Route path="library/:id" element={<LibraryDetails />}>
+            <Route path="about" element={<AboutMovie />} />
+            <Route path="cast" element={<Cast />} />
+          </Route> */}
         </Route>
       </Routes>
     </div>

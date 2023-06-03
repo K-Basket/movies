@@ -1,9 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 const LibraryDetails = () => {
+  const { id } = useParams();
+
   return (
     <>
       <h2>Library Details page</h2>
+      <p>{`This's movie id: ${id}`}</p>
 
       <ul>
         <li>
