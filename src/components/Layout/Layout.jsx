@@ -5,7 +5,8 @@ const layout = () => {
     <>
       <header>
         <nav>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Home  </NavLink>
+          <NavLink to="/movies">Movie  </NavLink>
           <NavLink to="/library">My library</NavLink>
         </nav>
       </header>

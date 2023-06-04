@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const CardMovie = ({ title, moviesData }) => {
+const MovieCards = ({ pathLink, moviesData }) => {
   return (
     <div>
-      <h2>{title}</h2>
       <ul>
         {moviesData.map(movie => {
           return (
             <li key={movie.id}>
-              <Link to={`home/${movie.id}`}>
+              <Link to={`${pathLink}${movie.id}`}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
@@ -25,4 +24,4 @@ const CardMovie = ({ title, moviesData }) => {
   );
 };
 
-export default CardMovie;
+export default MovieCards;

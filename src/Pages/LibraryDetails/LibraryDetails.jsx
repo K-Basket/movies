@@ -2,6 +2,7 @@ import { Link, Outlet, useParams } from 'react-router-dom';
 
 const LibraryDetails = () => {
   const { id } = useParams();
+  console.log('useParam-id', id);
 
   return (
     <>

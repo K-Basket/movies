@@ -1,23 +1,25 @@
-import { getMovieSearch, getTrending } from 'Api/Api';
+import { getMovieSearch } from 'Api/Api';
+import FormSearch from 'components/FormSearch/FormSearch';
 import MovieCards from 'components/MovieCards/MovieCards';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const Home = () => {
-  const [trendMovies, setTrendMovies] = useState([]);
-  const [, setMovies] = useState([]);
+const Movies = () => {
+  const [movies, setMovies] = useState([]);
+  console.log('movies.length :>> ', movies.length);
+
+  // const [searchInput, setSearchInput] = useState('');
+  // const location = useLocation();
   const [searchParams] = useSearchParams(); // читать/перезаписывать строку запроса
   const query = searchParams.get('query') ?? ''; // записывает значение query или пустую строку
 
   useEffect(() => {
     (async () => {
       try {
-        const dataTrendMovies = await getTrending();
         const movieSearch = await getMovieSearch(query);
 
-        // console.log('dataTrendMovies :>> ', dataTrendMovies); // ---temp
+        // console.log('movieSearch :>> ', movieSearch); // ---temp
         setMovies(movieSearch);
-        setTrendMovies(dataTrendMovies);
       } catch (error) {
         console.warn(error);
       }
@@ -27,10 +29,13 @@ const Home = () => {
   return (
     <>
       <div>
-        <MovieCards pathLink={'movies/'} moviesData={trendMovies} />
+        <FormSearch />
+        {movies.length !== 0 && (
+          <MovieCards pathLink={''} moviesData={movies} />
+        )}
       </div>
     </>
   );
 };
 
-export default Home;
+export default Movies;
