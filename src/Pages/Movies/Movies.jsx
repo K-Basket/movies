@@ -6,7 +6,6 @@ import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  console.log('movies.length :>> ', movies.length);
 
   // const [searchInput, setSearchInput] = useState('');
   // const location = useLocation();

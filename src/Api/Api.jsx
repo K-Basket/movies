@@ -48,7 +48,8 @@ export const getMovieCredits = async movieId => {
   };
 
   const { data } = await axios.request(options);
-  return data.cast;
+  // return data.cast;
+  return data;
 };
 
 // запрос обзоров для страницы кинофильма
@@ -92,4 +93,4 @@ export const getMovieSearch = async query => {
 
 // getTrending().then(data => console.log('getTrending :>> ', data));
 
-// getMovieSearch('car').then(data => console.log('Search :>> ', data));
+// getMovieCredits('961718').then(data => console.log('Search-:>> ', data));

@@ -8,8 +8,20 @@ const MovieCards = ({ pathLink, moviesData }) => {
           return (
             <li key={movie.id}>
               <Link to={`${pathLink}${movie.id}`}>
+                {/* {movie.poster_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                    width="250"
+                  />
+                ) : (
+                  <p>There is no image here</p>
+                )} */}
+
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w500${
+                    movie.poster_path ?? '/dykOcAqI01Fci5cKQW3bEUrPWwU.jpg'
+                  }`}
                   alt={movie.title}
                   width="250"
                 />
