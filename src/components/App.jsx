@@ -22,6 +22,7 @@ export const App = () => {
 
           <Route path="library" element={<Library />} />
         </Route>
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );
